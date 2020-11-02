@@ -102,7 +102,16 @@
     margin: 0 5px;
     // width: 90%;
     width: 100%;
-    padding: 0 4rem;
+    padding: 0 1rem;
+    @include sm-width() {
+        padding: 0 2rem;
+    }
+    @include md-width() {
+        padding: 0 3rem;
+    }
+    @include lg-width() {
+        padding: 0 4rem;
+    }
     &-txt {
         margin: 15px 0 10px;
         font-weight: bold;
