@@ -1,0 +1,38 @@
+//color
+// $green1: rgb(69,149,176); //text
+// $green2:  rgba(255, 255, 255, 0.349);
+// $blue1: #f3b25c; //bg
+// $gray: #00000029;
+// $darkGray: #e0fcee;
+// $white: #fff;
+// $orange:#2ed1ff;
+
+$white: #FFFFFF;
+$purple: #2A2A40;
+
+//font
+$ch-font: Arial, Helvetica, sans-serif; ;
+
+//字型--------------------
+$body-font: $ch-font;
+
+//顏色---------------------
+$bgTop: #7987BF;//背景色(上半)
+$header_font-color: #2A2A40;//文字: 微軟產品反應卡
+$segment: #595990;
+$segment-fontColor: $white; 
+$segment__focus--font: $white;
+$segment__focus--border: #595990;
+
+$bgDown: #F0F3FC;//背景色(下半、方框、選項框)
+$container_font-color: #4C4743;//文字:友善的
+$containerBg-focus: $white;
+$shadow-color: #00000029;
+
+//modal
+$modal_txtColor: $purple;
+
+//參數
+$element-count: 3;
+$container-width: 350px;
+$border-radius: 35px;

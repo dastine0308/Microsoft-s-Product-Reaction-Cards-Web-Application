@@ -1,0 +1,258 @@
+@import "utilis/_mixin.scss"; //RWD斷點
+
+.body {
+    height: 100%;
+    background-color: $bgDown;
+    font-size: 16px;
+    @include sm-width() {
+        font-size: 20px;
+    }
+}
+
+.index__bg--bottom {
+    position: fixed;
+    background-color: $bgTop;
+    top: 0;
+    height: 355px;
+    width: 100%;
+    @include sm-width() {
+        height: 430px;
+    }
+}
+
+//scroll-bar自定義
+::-webkit-scrollbar{
+    width: .5rem;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $bgTop;
+    border-radius: 5px;
+}
+
+.index__content--top {
+    z-index: 100;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    font-weight: bold;
+    grid-template-rows: 10rem auto 6rem;
+    @include lg-width() {
+        grid-template-rows: 8rem auto;
+    }
+    @include xl-width() {
+        grid-template-rows: 10rem auto 6rem;
+    }
+
+}
+
+.header {
+    color: $header_font-color;
+    margin: 5rem 1.625rem 0;
+    @include sm-width() {
+        margin: 4.188rem 1.625rem 0;
+        margin: 3rem 1.625rem 0;
+    }
+    .title  {
+        margin-bottom: 1rem;
+    }
+    .line {
+        padding-top: 8px;
+        background: url(../img/line_header.png) left top repeat-x;
+    }
+    .artical {
+        line-height: 1.3rem;
+        margin-top: 1rem;
+        color: $white;
+        word-break: keep-all;
+        font-size: .813rem;
+        @include sm-width() {
+            font-size: 1rem;
+            line-height: 1.3rem;
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    padding: 1rem 1.625rem 0;
+    @include sm-width() {
+        padding: 0 1.625rem 0;
+    }
+    overflow: hidden;
+    &-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+//顯示所有字卡的區域(main裡倒數第二個框框)
+.tab-content {
+    width: 90%;
+    padding: 10px 5px 10px 10px;
+    margin: 0 5px;
+    background: $bgDown;
+    overflow: hidden;
+    border-radius: 10px 10px;
+    color: $container_font-color;
+}
+
+//顯示選擇結果的區域(main裡最下方的框框)
+.tab-result {
+    color: $container_font-color;
+    margin: 0 5px;
+    // width: 90%;
+    width: 100%;
+    padding: 0 1rem;
+    &-txt {
+        margin: 15px 0 10px;
+        font-weight: bold;
+        padding: 0;
+        justify-content: space-between;
+        font-size: .813rem;
+        @include sm-width() {
+            line-height: 1.5rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+.cardGroup {
+    color: $container_font-color;
+    max-height: 16.6rem;
+    @include sm-width() {
+        max-height: 33.6rem;
+    }
+    @include md-width() {
+        max-height: 34rem;
+    }
+    @include lg-width() {
+        max-height: 16.6rem;
+    }
+    @include xl-width() {
+        max-height: 22.6rem;
+    }
+    overflow: auto;
+    grid-template-columns: repeat(auto-fill,minmax(135px,1fr));
+
+    //按鈕(複選) checkbox
+    input[type="checkbox"] {
+        display: none;
+        //隱藏checkbox
+    }
+        
+    input[type="checkbox"]:checked + label {
+        background-color: $white;
+    }
+
+    &-item {
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        // width: calc(100% - (5px*2));
+        height: 80px;
+        margin: 5px 5px;
+        border-width: 2px;
+        border-radius: 10px;
+        border: 2px solid $shadow-color;
+        &-ch {
+            text-align: center;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        &-eg {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+}
+
+//已選擇的字卡區域
+.resultGroup {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: $container_font-color;
+    // max-width: 100%;
+    width: 100%;
+    padding: 3px 0;
+    // overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    &-item {
+        flex-shrink: 0;//預設是1，改成0 預防爆版(不會隨著內容物改變)
+        flex-direction: column;
+        justify-content: center;
+        border-width: 2px;
+        border-radius: 20px;
+        margin: 0 5px;
+        background-color: $white;
+        font-size: .813rem;
+        position: relative;
+
+        //按鈕(複選) checkbox
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        @include sm-width() {
+            font-size: 1rem;
+        }
+        @include md-width() {
+            padding: 0.6rem 2rem 0.6rem 1.5rem;
+        }
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f00d";
+            position: absolute;
+            right: 11%;
+            top: 30%;
+        }
+        &-ch {
+            padding: 0.6rem 2rem 0.6rem 1.5rem;
+            text-align: center;
+            font-weight: bold;
+            @include md-width() {
+                margin-bottom: 5px;
+                padding: 0;
+            }
+        }
+        &-eg {
+            display: none;
+            @include md-width() {
+                display: block;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.copyIcon {
+    cursor: pointer;
+    font-size: 1.3rem;
+    @include sm-width() {
+        line-height: 2rem;
+        font-size: 1.6rem;
+    }
+}
+
+.footer {
+    padding: 10px; 
+    color: lightslategrey;
+    font-weight: lighter;
+    p {
+        font-size: .8rem;
+        @include sm-width() {
+            line-height: 2rem;
+            font-size: 1rem;
+        }
+    }
+    @include lg-width() {
+        display: none;
+    }
+    @include xl-width() {
+        display: block;
+    }
+}  
