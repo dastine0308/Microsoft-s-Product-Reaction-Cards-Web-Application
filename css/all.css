@@ -214,12 +214,12 @@ body {
 .body {
   height: 100%;
   background-color: #F0F3FC;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 @media all and (min-width: 576px) {
   .body {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -296,12 +296,12 @@ body {
   margin-top: 1rem;
   color: #FFFFFF;
   word-break: keep-all;
-  font-size: .9rem;
+  font-size: .95rem;
 }
 
 @media all and (min-width: 576px) {
   .header .artical {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.3rem;
   }
 }
