@@ -4,15 +4,15 @@
 #app {
 	justify-content: center;
 	margin: .7rem;
-	font-size: .813rem;
+	font-size: .9rem;
 	@include sm-width() {
 		font-size: 1rem;
 	}
 
 	ul {
 		position: relative;
-		width: 10rem;
-    	height: 1.7rem;
+		width: 12rem;
+		height: 2rem;
 		@include sm-width() {
 			width: 13.5rem;
     		height: 2.2rem;
@@ -34,7 +34,7 @@
 			position: absolute;
 			left: 0;
 			top: 0;
-			width: calc(10rem / #{$element-count});
+			width: calc(12rem / #{$element-count});
 			@include sm-width() {
 				width: calc(13.5rem / #{$element-count});
 			}
