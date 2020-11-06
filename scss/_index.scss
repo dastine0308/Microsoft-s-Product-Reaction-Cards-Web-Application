@@ -186,7 +186,7 @@
         border-radius: 20px;
         margin: 0 5px;
         background-color: $white;
-        font-size: .813rem;
+        font-size: 1rem;
         position: relative;
 
         //按鈕(複選) checkbox
@@ -195,7 +195,7 @@
         }
 
         @include sm-width() {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
         @include md-width() {
             padding: 0.6rem 2rem 0.6rem 1.5rem;
@@ -229,7 +229,7 @@
 
 .copyIcon {
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     @include sm-width() {
         line-height: 2rem;
         font-size: 1.6rem;
