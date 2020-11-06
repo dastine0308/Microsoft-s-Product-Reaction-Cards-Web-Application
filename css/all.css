@@ -223,6 +223,12 @@ body {
   }
 }
 
+@media all and (min-width: 992px) {
+  .body {
+    font-size: 18px;
+  }
+}
+
 .index__bg--bottom {
   position: fixed;
   background-color: #7987BF;
@@ -361,6 +367,12 @@ body {
   }
 }
 
+@media all and (min-width: 992px) {
+  .tab-result-txt {
+    font-size: 1rem;
+  }
+}
+
 .cardGroup {
   color: #4C4743;
   max-height: 16.6rem;
@@ -478,6 +490,12 @@ body {
 @media all and (min-width: 768px) {
   .resultGroup-item {
     padding: 0.6rem 2rem 0.6rem 1.5rem;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .resultGroup-item {
+    font-size: 1rem;
   }
 }
 

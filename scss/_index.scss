@@ -7,6 +7,9 @@
     @include sm-width() {
         font-size: 20px;
     }
+    @include lg-width() {
+        font-size: 18px;
+    }
 }
 
 .index__bg--bottom {
@@ -111,6 +114,9 @@
             line-height: 1.5rem;
             font-size: 1.2rem;
         }
+        @include lg-width() {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -199,6 +205,9 @@
         }
         @include md-width() {
             padding: 0.6rem 2rem 0.6rem 1.5rem;
+        }
+        @include lg-width() {
+            font-size: 1rem;
         }
         &::before {
             font-family: "Font Awesome 5 Free";
