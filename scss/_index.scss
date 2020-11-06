@@ -64,9 +64,9 @@
         margin-top: 1rem;
         color: $white;
         word-break: keep-all;
-        font-size: .813rem;
+        font-size: .9rem;
         @include sm-width() {
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.3rem;
         }
     }
