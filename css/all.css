@@ -341,26 +341,7 @@ body {
 .tab-result {
   color: #4C4743;
   margin: 0 5px;
-  width: 100%;
-  padding: 0 1rem;
-}
-
-@media all and (min-width: 576px) {
-  .tab-result {
-    padding: 0 2rem;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .tab-result {
-    padding: 0 3rem;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .tab-result {
-    padding: 0 4rem;
-  }
+  width: 90%;
 }
 
 .tab-result-txt {
