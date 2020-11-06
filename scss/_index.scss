@@ -106,10 +106,10 @@
         font-weight: bold;
         padding: 0;
         justify-content: space-between;
-        font-size: .813rem;
+        font-size: 1rem;
         @include sm-width() {
             line-height: 1.5rem;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
 }
