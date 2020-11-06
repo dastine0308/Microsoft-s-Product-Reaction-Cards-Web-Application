@@ -252,8 +252,8 @@ body {
   width: 100%;
   height: 100vh;
   font-weight: bold;
-  -ms-grid-rows: 10rem auto 6rem;
-      grid-template-rows: 10rem auto 6rem;
+  -ms-grid-rows: 11rem auto 6rem;
+      grid-template-rows: 11rem auto 6rem;
 }
 
 @media all and (min-width: 992px) {
