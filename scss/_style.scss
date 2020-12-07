@@ -1,0 +1,102 @@
+@import "utilis/_mixin.scss"; //RWD斷點
+
+//tabs codepen
+#app {
+	justify-content: center;
+	margin: .7rem;
+	font-size: .813rem;
+	@include sm-width() {
+		font-size: 1rem;
+	}
+
+	ul {
+		position: relative;
+		width: 10rem;
+    	height: 1.7rem;
+		@include sm-width() {
+			width: 13.5rem;
+    		height: 2.2rem;
+		}
+		display: grid;
+		grid-template-columns: repeat($element-count, 1fr);
+		border-radius: $border-radius;
+		background: $segment;
+		overflow: hidden;
+		li {
+			list-style: none;
+			display: grid;
+			place-items: center;
+			color: $segment-fontColor;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.focus-el {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: calc(10rem / #{$element-count});
+			@include sm-width() {
+				width: calc(13.5rem / #{$element-count});
+			}
+			height: 100%;
+			border-radius: $border-radius;
+			background: #ffffff75;
+			border: .25rem solid $segment__focus--border;
+			&.el--2 {
+				left: calc(-100% / #{$element-count});
+				opacity: 40;
+			}
+		}
+	}
+}
+
+// btn codepen
+.btn-13 {
+	border: none;
+	z-index: 1;
+}
+
+.custom-btn {
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	outline: none;
+}
+
+
+//bootstrap Modal
+.modal-content {
+	border-radius: .7rem;
+	height: 30vh;
+	margin: 0 3rem;
+	font-weight: bold;
+	border-color: $modal_txtColor;
+	.modal-header {
+		border-bottom:0;
+		span {
+			font-size: 2rem;
+			position: absolute;
+			right: 4%;
+			text-shadow: 5px 0px 10px $shadow-color;
+			color: $modal_txtColor;
+		}
+		.close {
+			&:focus {
+				outline: 0; //当元素获得焦点的时候，焦点框为0.
+			}
+		}
+	}
+	.modal-body {
+		text-align: center;
+		font-size: 1.3rem;
+		color: $modal_txtColor;
+		.modal-icon {
+			margin-bottom: 2rem;
+			&::before {
+				font-family: "Font Awesome 5 Free";
+				content: "\f06a";
+				font-size: 2.8rem;
+			}
+		}
+	}
+}
