@@ -3,12 +3,9 @@
 .body {
     height: 100%;
     background-color: $bgDown;
-    font-size: 18px;
+    font-size: 16px;
     @include sm-width() {
         font-size: 20px;
-    }
-    @include lg-width() {
-        font-size: 18px;
     }
 }
 
@@ -33,28 +30,19 @@
 }
 
 .index__content--top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     z-index: 100;
-    overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     font-weight: bold;
-    grid-template-rows: 11rem auto 6rem;
-    @include lg-width() {
-        grid-template-rows: 8rem auto;
-    }
-    @include xl-width() {
-        grid-template-rows: 10rem auto 6rem;
-    }
-
+    padding: 0 2rem 0;
 }
 
 .header {
     color: $header_font-color;
-    margin: 5rem 1.625rem 0;
-    @include sm-width() {
-        margin: 4.188rem 1.625rem 0;
-        margin: 3rem 1.625rem 0;
-    }
+    margin-top: 2rem;
     .title  {
         margin-bottom: 1rem;
     }
@@ -67,9 +55,9 @@
         margin-top: 1rem;
         color: $white;
         word-break: keep-all;
-        font-size: .95rem;
+        font-size: .813rem;
         @include sm-width() {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.3rem;
         }
     }
@@ -77,10 +65,7 @@
 
 .main {
     width: 100%;
-    padding: 1rem 1.625rem 0;
-    @include sm-width() {
-        padding: 0 1.625rem 0;
-    }
+    max-height: 100%;
     overflow: hidden;
     &-container {
         flex-direction: column;
@@ -90,9 +75,8 @@
 
 //顯示所有字卡的區域(main裡倒數第二個框框)
 .tab-content {
-    width: 90%;
+    width: 100%;
     padding: 10px 5px 10px 10px;
-    margin: 0 5px;
     background: $bgDown;
     overflow: hidden;
     border-radius: 10px 10px;
@@ -103,18 +87,16 @@
 .tab-result {
     color: $container_font-color;
     margin: 0 5px;
-    width: 90%;
+    width: 100%;
+    padding: 0 1rem;
     &-txt {
         margin: 15px 0 10px;
         font-weight: bold;
         padding: 0;
         justify-content: space-between;
-        font-size: 1rem;
+        font-size: .813rem;
         @include sm-width() {
             line-height: 1.5rem;
-            font-size: 1.2rem;
-        }
-        @include lg-width() {
             font-size: 1rem;
         }
     }
@@ -122,21 +104,21 @@
 
 .cardGroup {
     color: $container_font-color;
-    max-height: 16.6rem;
+    max-height: 40vmax;
     @include sm-width() {
-        max-height: 33.6rem;
+        max-height: 40vmin;
     }
-    @include md-width() {
-        max-height: 34rem;
-    }
-    @include lg-width() {
-        max-height: 16.6rem;
-    }
-    @include xl-width() {
-        max-height: 22.6rem;
-    }
+    // @include md-width() {
+    //     max-height: 34rem;
+    // }
+    // @include lg-width() {
+    //     max-height: 16.6rem;
+    // }
+    // @include xl-width() {
+    //     max-height: 22.6rem;
+    // }
     overflow: auto;
-    grid-template-columns: repeat(auto-fill,minmax(135px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(8rem,1fr));
 
     //按鈕(複選) checkbox
     input[type="checkbox"] {
@@ -172,28 +154,26 @@
 
 //已選擇的字卡區域
 .resultGroup {
-    display: flex;
-    flex-shrink: 1;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: inline-flex;
+    @include md-width() {
+        display: inline-block;
+    }
     color: $container_font-color;
-    // max-width: 100%;
     width: 100%;
     padding: 3px 0;
-    // overflow: auto;
     overflow-x: scroll;
     overflow-y: hidden;
 
     &-item {
-        flex-shrink: 0;//預設是1，改成0 預防爆版(不會隨著內容物改變)
-        flex-direction: column;
-        justify-content: center;
+        display: inline-flex;
+        min-width: 6rem;
+        justify-content: space-around;
+        align-items: center;
         border-width: 2px;
         border-radius: 20px;
-        margin: 0 5px;
-        background-color: $white;
-        font-size: 1rem;
-        position: relative;
+        margin: 0 5px 15px 5px;
+        background-color: #FFFFFF;
+        font-size: .813rem;
 
         //按鈕(複選) checkbox
         input[type="checkbox"] {
@@ -201,23 +181,18 @@
         }
 
         @include sm-width() {
-            font-size: 1.2rem;
+            font-size: 1rem;
+            min-width: 8rem;
         }
         @include md-width() {
-            padding: 0.6rem 2rem 0.6rem 1.5rem;
+            padding: 0.6rem;
         }
-        @include lg-width() {
-            font-size: 1rem;
-        }
-        &::before {
+        &::after {
             font-family: "Font Awesome 5 Free";
             content: "\f00d";
-            position: absolute;
-            right: 11%;
-            top: 30%;
         }
         &-ch {
-            padding: 0.6rem 2rem 0.6rem 1.5rem;
+            padding: 0.6rem;
             text-align: center;
             font-weight: bold;
             @include md-width() {
@@ -238,7 +213,7 @@
 
 .copyIcon {
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     @include sm-width() {
         line-height: 2rem;
         font-size: 1.6rem;
@@ -256,10 +231,10 @@
             font-size: 1rem;
         }
     }
-    @include lg-width() {
-        display: none;
-    }
-    @include xl-width() {
-        display: block;
-    }
+    // @include lg-width() {
+    //     display: none;
+    // }
+    // @include xl-width() {
+    //     display: block;
+    // }
 }  
