@@ -300,7 +300,6 @@ body {
 }
 
 .main-container {
-  height: 120vmin;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -312,24 +311,11 @@ body {
 
 .tab-content {
   width: 100%;
-  max-height: 35vmax;
   padding: 10px 5px 10px 10px;
   background: #F0F3FC;
   overflow: hidden;
   border-radius: 10px 10px;
   color: #4C4743;
-}
-
-@media all and (min-width: 375px) {
-  .tab-content {
-    max-height: 50vmax;
-  }
-}
-
-@media all and (min-width: 576px) {
-  .tab-content {
-    max-height: 45vmin;
-  }
 }
 
 .tab-result {
@@ -358,10 +344,16 @@ body {
 
 .cardGroup {
   color: #4C4743;
-  max-height: 100%;
+  max-height: 40vmax;
   overflow: auto;
   -ms-grid-columns: (minmax(8rem, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+}
+
+@media all and (min-width: 576px) {
+  .cardGroup {
+    max-height: 40vmin;
+  }
 }
 
 .cardGroup input[type="checkbox"] {
@@ -428,7 +420,7 @@ body {
           align-items: center;
   border-width: 2px;
   border-radius: 20px;
-  margin: 0 5px 10px 5px;
+  margin: 0 5px 15px 5px;
   background-color: #FFFFFF;
   font-size: .813rem;
 }

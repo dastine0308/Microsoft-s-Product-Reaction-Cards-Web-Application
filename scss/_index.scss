@@ -68,7 +68,6 @@
     max-height: 100%;
     overflow: hidden;
     &-container {
-        height: 120vmin;
         flex-direction: column;
         align-items: center;
     }
@@ -77,13 +76,6 @@
 //顯示所有字卡的區域(main裡倒數第二個框框)
 .tab-content {
     width: 100%;
-    max-height: 35vmax;
-    @include xs-width() {
-        max-height: 50vmax;
-    }
-    @include sm-width() {
-        max-height: 45vmin;
-    }
     padding: 10px 5px 10px 10px;
     background: $bgDown;
     overflow: hidden;
@@ -112,7 +104,19 @@
 
 .cardGroup {
     color: $container_font-color;
-    max-height: 100%;
+    max-height: 40vmax;
+    @include sm-width() {
+        max-height: 40vmin;
+    }
+    // @include md-width() {
+    //     max-height: 34rem;
+    // }
+    // @include lg-width() {
+    //     max-height: 16.6rem;
+    // }
+    // @include xl-width() {
+    //     max-height: 22.6rem;
+    // }
     overflow: auto;
     grid-template-columns: repeat(auto-fill,minmax(8rem,1fr));
 
@@ -167,7 +171,7 @@
         align-items: center;
         border-width: 2px;
         border-radius: 20px;
-        margin: 0 5px 10px 5px;
+        margin: 0 5px 15px 5px;
         background-color: #FFFFFF;
         font-size: .813rem;
 
