@@ -53,6 +53,7 @@
     .artical {
         line-height: 1.3rem;
         margin-top: 1rem;
+        margin-bottom: 1.5rem;
         color: $white;
         word-break: keep-all;
         font-size: .813rem;
@@ -106,7 +107,7 @@
     color: $container_font-color;
     max-height: 40vmax;
     @include sm-width() {
-        max-height: 40vmin;
+        max-height: 45vmin;
     }
     // @include md-width() {
     //     max-height: 34rem;

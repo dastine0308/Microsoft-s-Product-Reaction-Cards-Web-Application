@@ -281,6 +281,7 @@ body {
 .header .artical {
   line-height: 1.3rem;
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
   color: #FFFFFF;
   word-break: keep-all;
   font-size: .813rem;
@@ -352,7 +353,7 @@ body {
 
 @media all and (min-width: 576px) {
   .cardGroup {
-    max-height: 40vmin;
+    max-height: 45vmin;
   }
 }
 
