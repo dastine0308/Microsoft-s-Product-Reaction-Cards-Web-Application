@@ -69,8 +69,8 @@
 	border-radius: .7rem;
 	height: 30vh;
 	margin: 0 3rem;
-	font-weight: bold;
-	border-color: $modal_txtColor;
+	// font-weight: bold;
+	// border-color: $modal_txtColor;
 	.modal-header {
 		border-bottom:0;
 		span {
@@ -92,6 +92,7 @@
 		color: $modal_txtColor;
 		.modal-icon {
 			margin-bottom: 2rem;
+			font-weight: bold;
 			&::before {
 				font-family: "Font Awesome 5 Free";
 				content: "\f06a";

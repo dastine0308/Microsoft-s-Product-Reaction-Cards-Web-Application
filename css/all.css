@@ -175,8 +175,6 @@ body {
   border-radius: .7rem;
   height: 30vh;
   margin: 0 3rem;
-  font-weight: bold;
-  border-color: #2A2A40;
 }
 
 .modal-content .modal-header {
@@ -203,6 +201,7 @@ body {
 
 .modal-content .modal-body .modal-icon {
   margin-bottom: 2rem;
+  font-weight: bold;
 }
 
 .modal-content .modal-body .modal-icon::before {
@@ -271,6 +270,7 @@ body {
 
 .header .title {
   margin-bottom: 1rem;
+  font-size: 20px;
 }
 
 .header .line {
@@ -284,7 +284,7 @@ body {
   margin-bottom: 1.5rem;
   color: #FFFFFF;
   word-break: keep-all;
-  font-size: .813rem;
+  font-size: 1rem;
 }
 
 @media all and (min-width: 576px) {
