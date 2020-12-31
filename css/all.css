@@ -328,7 +328,6 @@ body {
 
 .tab-result-txt {
   margin: 15px 0 10px;
-  font-weight: bold;
   padding: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
