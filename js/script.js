@@ -174,6 +174,7 @@ $(function () {
 				'<p class="resultGroup-item-ch">' + item.chName + '</p>' +
 				'<p class="resultGroup-item-eg">' + item.enName + '</p>' +
 				'</label>'+
+				'<i class="fas fa-times"></i>'+
 				'</div>'
 			)
 		});

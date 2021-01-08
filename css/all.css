@@ -442,11 +442,6 @@ body {
   }
 }
 
-.resultGroup-item::after {
-  font-family: "Font Awesome 5 Free";
-  content: "\f00d";
-}
-
 .resultGroup-item-ch {
   padding: 0.6rem;
   text-align: center;
