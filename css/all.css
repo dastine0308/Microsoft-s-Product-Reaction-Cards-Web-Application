@@ -92,79 +92,12 @@ body {
   display: none;
 }
 
-#app {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: .7rem;
-  font-size: .9rem;
-}
-
-@media all and (min-width: 576px) {
-  #app {
-    font-size: 1rem;
-  }
-}
-
-#app ul {
-  position: relative;
-  width: 12rem;
-  height: 2rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  border-radius: 35px;
-  background: #595990;
-  overflow: hidden;
-}
-
-@media all and (min-width: 576px) {
-  #app ul {
-    width: 13.5rem;
-    height: 2.2rem;
-  }
-}
-
-#app ul li {
-  list-style: none;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  color: #FFFFFF;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#app ul .focus-el {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: calc(12rem / 3);
-  height: 100%;
-  border-radius: 35px;
-  background: #ffffff75;
-  border: 0.25rem solid #595990;
-}
-
-@media all and (min-width: 576px) {
-  #app ul .focus-el {
-    width: calc(13.5rem / 3);
-  }
-}
-
-#app ul .focus-el.el--2 {
-  left: calc(-100% / 3);
-  opacity: 40;
-}
-
 .btn-13 {
   border: none;
   z-index: 1;
 }
 
 .custom-btn {
-  cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
@@ -298,6 +231,16 @@ body {
   width: 100%;
   max-height: 100%;
   overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .9rem;
+}
+
+@media all and (min-width: 576px) {
+  .main {
+    font-size: 1rem;
+  }
 }
 
 .main-container {
@@ -365,6 +308,7 @@ body {
 }
 
 .cardGroup-item {
+  cursor: pointer;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -465,6 +409,10 @@ body {
     font-size: 14px;
     text-align: center;
   }
+}
+
+.resultGroup-item i {
+  cursor: pointer;
 }
 
 .copyIcon {

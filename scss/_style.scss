@@ -1,55 +1,5 @@
 @import "utilis/_mixin.scss"; //RWD斷點
 
-//tabs codepen
-#app {
-	justify-content: center;
-	margin: .7rem;
-	font-size: .9rem;
-	@include sm-width() {
-		font-size: 1rem;
-	}
-
-	ul {
-		position: relative;
-		width: 12rem;
-		height: 2rem;
-		@include sm-width() {
-			width: 13.5rem;
-    		height: 2.2rem;
-		}
-		display: grid;
-		grid-template-columns: repeat($element-count, 1fr);
-		border-radius: $border-radius;
-		background: $segment;
-		overflow: hidden;
-		li {
-			list-style: none;
-			display: grid;
-			place-items: center;
-			color: $segment-fontColor;
-			font-weight: bold;
-			cursor: pointer;
-		}
-		.focus-el {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: calc(12rem / #{$element-count});
-			@include sm-width() {
-				width: calc(13.5rem / #{$element-count});
-			}
-			height: 100%;
-			border-radius: $border-radius;
-			background: #ffffff75;
-			border: .25rem solid $segment__focus--border;
-			&.el--2 {
-				left: calc(-100% / #{$element-count});
-				opacity: 40;
-			}
-		}
-	}
-}
-
 // btn codepen
 .btn-13 {
 	border: none;
@@ -57,7 +7,6 @@
 }
 
 .custom-btn {
-	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
 	outline: none;

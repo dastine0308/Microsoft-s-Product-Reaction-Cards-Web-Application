@@ -36,30 +36,34 @@
         <div class="main" id="app">
             <div class="main-container d-flex js-container">
                 <div class="tab-content">
-                    <div class="cardGroup d-grid js-cardGroup" v-for="(item,index) in testList">
+                    <div class="cardGroup d-grid js-cardGroup">
                         <!-- JS生成 -->
-                        <input type="checkbox" :id="item.id" :name="item.name" @click="showResult(index)">
-				        <label :for="item.id" class="cardGroup-item d-flex custom-btn btn-13">
-				            <p class="cardGroup-item-ch">{{item.chName }}</p>
-				            <p class="cardGroup-item-eg">{{item.enName }}</p>
-                        </label>
+                        <template v-for="(item,index) in cardList">
+                            <input type="checkbox" :id="item.id" :name="item.name" :value="item" v-model="resultList">
+                            <label :for="item.id" class="cardGroup-item d-flex custom-btn btn-13">
+                                <p class="cardGroup-item-ch">{{item.chName }}</p>
+                                <p class="cardGroup-item-eg">{{item.enName }}</p>
+                            </label>
+                        </template>
                     </div>
                 </div>
                 <!-- js顯示選取結果 -->
                 <div class="tab-result" v-if="isShow">
-                    <p class="tab-result-txt d-flex">
-                        <p>已選{{ resultList.length }}項</p>
-				        <i class="far fa-copy copyIcon js-copy" title="複製"></i>
-                    </p>
-                    <div class="resultGroup js-resultGroup" id="copyResult" v-for="(item,index) in resultList">
+                    <div class="tab-result-txt d-flex">
+                        <p> 已選{{ resultList.length }}項 </p>
+				        <i class="far fa-copy copyIcon js-copy" title="複製" @click="CopyTextToClipboard('copyResult')"></i>
+                    </div>
+                    <div class="resultGroup js-resultGroup" id="copyResult">
                         <!-- JS生成 -->
-                        <div :id="item.id" :name="item.name" class="resultGroup-item custom-btn btn-13">
-                            <div>
-                                <p class="resultGroup-item-ch">{{item.chName }}</p>
-                                <p class="resultGroup-item-eg">{{item.enName }}</p>
+                        <template v-for="(item,index) in resultList">
+                            <div :id="item.id" :name="item.name" class="resultGroup-item custom-btn btn-13">
+                                <div>
+                                    <p class="resultGroup-item-ch">{{item.chName }}</p>
+                                    <p class="resultGroup-item-eg">{{item.enName }}</p>
+                                </div>
+                                <i class="fas fa-times" @click="deleteItem(item)"></i>
                             </div>
-                            <i class="fas fa-times"></i>
-                        </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -70,7 +74,7 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
