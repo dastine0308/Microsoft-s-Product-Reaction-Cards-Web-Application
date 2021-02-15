@@ -745,8 +745,10 @@ var app = new Vue({
             // console.log('changed', newVal)
             if(this.resultList.length>0) {
                 this.isShow = true;
-                // if(this.resultList.length>5){
-                // }
+                if(this.resultList.length>5){
+                    this.resultList.splice(5,1);
+                    $('#exampleModalCenter').modal('toggle');
+                }
             } else {
                 this.isShow = false;
             }
